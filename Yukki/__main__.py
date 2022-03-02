@@ -241,8 +241,8 @@ async def initiate_bot():
     console.print(f"\n[red]Stopping Bot")
 
 
-home_text_pm = f"""ʜᴇʟʟᴏ
-ɴᴀ ᴘᴇʀᴜ {BOT_NAME}.
+home_text_pm = f"""👋ʜᴇʟʟᴏ {first_name}.
+
 ᴀʀᴇʏ ɴɪʙʙᴀ ɴᴀ ᴅᴀɢᴀʀɪᴋɪ ᴋᴀsʜᴛᴀᴘᴀᴅɪ ᴠᴀᴄʜᴀᴠ ɴᴀ ᴅᴀɢᴀʀɪᴋɪ ᴠᴀᴄʜɪɴᴀɴᴅʜᴜᴋᴜ ᴛʜᴀɴᴋs💙 ɴᴇɴᴜ ᴍᴇ ɢʀᴏᴜᴘs ʟᴏ ᴀᴜᴅɪᴏ ᴀɴᴅ ᴠɪᴅᴇᴏ 🔥 ᴍᴜsɪᴄ ᴘʟᴀʏ ᴄʜᴇsᴛʜᴀ ɴᴀɴᴜ ᴀᴅᴅ ᴄʜᴇsᴜᴋᴏ ᴍᴀʀɪ🥺.
  
 ᴘᴏᴡᴇʀᴇᴅ ʙʏ:[sᴀɴᴛʜᴜ ᴠᴄ💘](https://t.me/santhuvc) 
@@ -394,11 +394,11 @@ async def help_parser(name, keyboard=None):
     if not keyboard:
         keyboard = InlineKeyboardMarkup(paginate_modules(0, HELPABLE, "help"))
     return (
-        """Hello {first_name},
+        """👋ʜᴇʟʟᴏ {first_name},
 
-Click on the buttons for more information.
+ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴs ғᴏʀ ᴍᴏʀᴇ ɪɴғᴏʀᴍᴀᴛɪᴏɴ.
 
-All commands can be used with: /
+ᴀʟʟ ᴄᴏᴍᴍᴀɴᴅs ᴄᴀɴ ʙᴇ ᴜsᴇᴅ ᴡɪᴛʜ: /
 """.format(
             first_name=name
         ),
