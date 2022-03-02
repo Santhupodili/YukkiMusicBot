@@ -27,7 +27,7 @@ async def gback_list_chose_stream(_, CallbackQuery):
     videoid, duration, user_id = callback_request.split("|")
     if CallbackQuery.from_user.id != int(user_id):
         return await CallbackQuery.answer(
-            "This is not for you! Search You Own Song.", show_alert=True
+            "ᴛʜɪs ɪs ɴᴏᴛ ғᴏʀ ʏᴏᴜ! sᴇᴀʀᴄʜ ʏᴏᴜ ᴏᴡɴ sᴏɴɢ.", show_alert=True
         )
     buttons = choose_markup(videoid, duration, user_id)
     await CallbackQuery.edit_message_reply_markup(
@@ -61,13 +61,13 @@ async def timer_checkup_markup(_, CallbackQuery):
             dur_left = db_mem[CallbackQuery.message.chat.id]["left"]
             duration_min = db_mem[CallbackQuery.message.chat.id]["total"]
             return await CallbackQuery.answer(
-                f"Remaining {dur_left} out of {duration_min} Mins.",
+                f"ʀᴇᴍᴀɪɴɪɴɢ {dur_left} ᴏᴜᴛ ᴏғ {duration_min} ᴍɪɴs.",
                 show_alert=True,
             )
-        return await CallbackQuery.answer(f"Not Playing.", show_alert=True)
+        return await CallbackQuery.answer(f"ɴᴏᴛ ᴘʟᴀʏɪɴɢ.", show_alert=True)
     else:
         return await CallbackQuery.answer(
-            f"No Active Voice Chat", show_alert=True
+            f"ɴᴏ ᴀᴄᴛɪᴠᴇ ᴠᴏɪᴄᴇ ᴄʜᴀᴛ", show_alert=True
         )
 
 
@@ -80,7 +80,7 @@ async def activevc(_, message: Message):
         duration_min = db_mem[message.chat.id]["total"]
         got_queue = get_queue.get(message.chat.id)
         if not got_queue:
-            await mystic.edit(f"Nothing in Queue")
+            await mystic.edit(f"ɴᴏᴛʜɪɴɢ ɪɴ ǫᴜᴇᴜᴇ")
         fetched = []
         for get in got_queue:
             fetched.append(get)
@@ -89,22 +89,22 @@ async def activevc(_, message: Message):
         current_playing = fetched[0][0]
         user_name = fetched[0][1]
 
-        msg = "**Queued List**\n\n"
-        msg += "**Currently Playing:**"
+        msg = "**ǫᴜᴇᴜᴇᴅ ʟɪsᴛ**\n\n"
+        msg += "**ᴄᴜʀʀᴇɴᴛʟʏ ᴘʟᴀʏɪɴɢ:**"
         msg += "\n▶️" + current_playing[:30]
-        msg += f"\n   ╚By:- {user_name}"
-        msg += f"\n   ╚Duration:- Remaining `{dur_left}` out of `{duration_min}` Mins."
+        msg += f"\n   ╚ʙʏ:- {user_name}"
+        msg += f"\n   ╚ᴅᴜʀᴀᴛɪᴏɴ:- ʀᴇᴍᴀɪɴɪɴɢ `{dur_left}` ᴏᴜᴛ ᴏғ `{duration_min}` ᴍɪɴs."
         fetched.pop(0)
         if fetched:
             msg += "\n\n"
-            msg += "**Up Next In Queue:**"
+            msg += "**ᴜᴘ ɴᴇxᴛ ɪɴ ǫᴜᴇᴜᴇ:**"
             for song in fetched:
                 name = song[0][:30]
                 usr = song[1]
                 dur = song[2]
                 msg += f"\n⏸️{name}"
-                msg += f"\n   ╠Duration : {dur}"
-                msg += f"\n   ╚Requested by : {usr}\n"
+                msg += f"\n   ╠ᴅᴜʀᴀᴛɪᴏɴ : {dur}"
+                msg += f"\n   ╚ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ : {usr}\n"
         if len(msg) > 4096:
             await mystic.delete()
             filename = "queue.txt"
@@ -119,7 +119,7 @@ async def activevc(_, message: Message):
         else:
             await mystic.edit(msg)
     else:
-        await message.reply_text(f"Nothing in Queue")
+        await message.reply_text(f"ɴᴏᴛʜɪɴɢ ɪɴ ǫᴜᴇᴜᴇ")
 
 
 @app.on_message(filters.command("activevc") & filters.user(SUDOERS))
@@ -150,7 +150,7 @@ async def activevc(_, message: Message):
         await message.reply_text("No Active Voice Chats")
     else:
         await message.reply_text(
-            f"**Active Voice Chats:-**\n\n{text}",
+            f"**ᴀᴄᴛɪᴠᴇ ᴠᴏɪᴄᴇ ᴄʜᴀᴛs:-**\n\n{text}",
             disable_web_page_preview=True,
         )
 
@@ -180,10 +180,10 @@ async def activevi_(_, message: Message):
             text += f"<b>{j + 1}. {title}</b> [`{x}`]\n"
         j += 1
     if not text:
-        await message.reply_text("No Active Voice Chats")
+        await message.reply_text("ɴᴏ ᴀᴄᴛɪᴠᴇ ᴠᴏɪᴄᴇ ᴄʜᴀᴛs")
     else:
         await message.reply_text(
-            f"**Active Video Calls:-**\n\n{text}",
+            f"**ᴀᴄᴛɪᴠᴇ ᴠɪᴅᴇᴏ ᴄᴀʟʟs:-**\n\n{text}",
             disable_web_page_preview=True,
         )
 
@@ -192,7 +192,7 @@ async def activevi_(_, message: Message):
 async def basffy(_, message):
     if len(message.command) != 2:
         await message.reply_text(
-            "**Usage:**\n/joinassistant [Chat Username or Chat ID]"
+            "**ᴜsᴀɢᴇ:**\n/joinassistant [Chat Username or Chat ID]"
         )
         return
     chat = message.text.split(None, 2)[1]
@@ -200,12 +200,12 @@ async def basffy(_, message):
         chat_id = (await app.get_chat(chat)).id
     except:
         return await message.reply_text(
-            "Add Bot to this Chat First.. Unknown Chat for the bot"
+            "ᴀᴅᴅ ʙᴏᴛ ᴛᴏ ᴛʜɪs ᴄʜᴀᴛ ғɪʀsᴛ.. ᴜɴᴋɴᴏᴡɴ ᴄʜᴀᴛ ғᴏʀ ᴛʜᴇ ʙᴏᴛ"
         )
     _assistant = await get_assistant(chat_id, "assistant")
     if not _assistant:
         return await message.reply_text(
-            "No Pre-Saved Assistant Found.\n\nYou can set Assistant Via /play inside {Chat}'s Group"
+            "ɴᴏ ᴘʀᴇ-sᴀᴠᴇᴅ ᴀssɪsᴛᴀɴᴛ ғᴏᴜɴᴅ.\n\nʏᴏᴜ ᴄᴀɴ sᴇᴛ ᴀssɪsᴛᴀɴᴛ ᴠɪᴀ /play ɪɴsɪᴅᴇ {Chat}'s ɢʀᴏᴜᴘ"
         )
     else:
         ran_ass = _assistant["saveassistant"]
@@ -231,10 +231,10 @@ async def baaaf(_, message):
     try:
         await app.leave_chat(chat)
     except Exception as e:
-        await message.reply_text(f"Failed\n**Possible reason could be**:{e}")
+        await message.reply_text(f"Failed\n**ᴘᴏssɪʙʟᴇ ʀᴇᴀsᴏɴ ᴄᴏᴜʟᴅ ʙᴇ**:{e}")
         print(e)
         return
-    await message.reply_text("Bot has left the chat successfully")
+    await message.reply_text("ʙᴏᴛ ʜᴀs ʟᴇғᴛ ᴛʜᴇ ᴄʜᴀᴛ sᴜᴄᴄᴇssғᴜʟʟʏ")
 
 
 @app.on_message(filters.command("leaveassistant") & filters.user(SUDOERS))
@@ -249,12 +249,12 @@ async def baujaf(_, message):
         chat_id = (await app.get_chat(chat)).id
     except:
         return await message.reply_text(
-            "Add Bot to this Chat First.. Unknown Chat for the bot"
+            "ᴀᴅᴅ ʙᴏᴛ ᴛᴏ ᴛʜɪs ᴄʜᴀᴛ ғɪʀsᴛ.. ᴜɴᴋɴᴏᴡɴ ᴄʜᴀᴛ ғᴏʀ ᴛʜᴇ ʙᴏᴛ"
         )
     _assistant = await get_assistant(chat, "assistant")
     if not _assistant:
         return await message.reply_text(
-            "No Pre-Saved Assistant Found.\n\nYou can set Assistant Via /play inside {Chat}'s Group"
+            "ɴᴏ ᴘʀᴇ-sᴀᴠᴇᴅ ᴀssɪsᴛᴀɴᴛ ғᴏᴜɴᴅ.\n\nʏᴏᴜ ᴄᴀɴ sᴇᴛ ᴀssɪsᴛᴀɴᴛ ᴠɪᴀ /play ɪɴsɪᴅᴇ {Chat}'s ɢʀᴏᴜᴘ"
         )
     else:
         ran_ass = _assistant["saveassistant"]
@@ -264,6 +264,6 @@ async def baujaf(_, message):
     try:
         await ASS_ACC.leave_chat(chat_id)
     except Exception as e:
-        await message.reply_text(f"Failed\n**Possible reason could be**:{e}")
+        await message.reply_text(f"Failed\n**ᴘᴏssɪʙʟᴇ ʀᴇᴀsᴏɴ ᴄᴏᴜʟᴅ ʙᴇ**:{e}")
         return
     await message.reply_text("Left.")
