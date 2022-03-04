@@ -17,21 +17,21 @@ from Yukki.Database import (add_gban_user, add_off, add_on, add_sudo,
                             remove_gban_user, remove_served_chat, remove_sudo,
                             set_video_limit)
 
-__MODULE__ = "SudoUsers"
+__MODULE__ = "sᴜᴅᴏ ᴜsᴇʀs"
 __HELP__ = f"""
 
-**<u>ADD & REMOVE SUDO USERS :</u>**
-/addsudo [Username or Reply to a user]
-/delsudo [Username or Reply to a user]
+**<u>ᴀᴅᴅ & ʀᴇᴍᴏᴠᴇ sᴜᴅᴏ ᴜsᴇʀs :</u>**
+/addsudo [ᴜsᴇʀɴᴀᴍᴇ ᴏʀ ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴜsᴇʀ]
+/delsudo [ᴜsᴇʀɴᴀᴍᴇ ᴏʀ ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴜsᴇʀ]
 
-**<u>HEROKU:</u>**
-/get_log - Log of last 100 lines from Heroku.
-/usage - Dyno Usage.
+**<u>ʜᴇʀᴏᴋᴜ:</u>**
+/get_log - ʟᴏɢ ᴏғ ʟᴀsᴛ 𝟷𝟶𝟶 ʟɪɴᴇs ғʀᴏᴍ ʜᴇʀᴏᴋᴜ.
+/usage - ᴅʏɴᴏ ᴜsᴀɢᴇ.
 
-**<u>CONFIG VARS:</u>**
-/get_var - Get a config var from Heroku or .env.
-/del_var - Delete any var on Heroku or .env.
-/set_var [Var Name] [Value] - Set a Var or Update a Var on heroku or .env. Seperate Var and its Value with a space.
+**<u>ᴄᴏɴғɪɢ ᴠᴀʀs:</u>**
+/get_var - ɢᴇᴛ ᴀ ᴄᴏɴғɪɢ ᴠᴀʀ ғʀᴏᴍ ʜᴇʀᴏᴋᴜ ᴏʀ .ᴇɴᴠ.
+/del_var - ᴅᴇʟᴇᴛᴇ ᴀɴʏ ᴠᴀʀ ᴏɴ ʜᴇʀᴏᴋᴜ ᴏʀ .ᴇɴᴠ.
+/set_var [ᴠᴀʀ ɴᴀᴍᴇ] [ᴠᴀʟᴜᴇ] - sᴇᴛ ᴀ ᴠᴀʀ ᴏʀ ᴜᴘᴅᴀᴛᴇ ᴀ ᴠᴀʀ ᴏɴ ʜᴇʀᴏᴋᴜ ᴏʀ .ᴇɴᴠ. sᴇᴘᴇʀᴀᴛᴇ ᴠᴀʀ ᴀɴᴅ ɪᴛs ᴠᴀʟᴜᴇ ᴡɪᴛʜ ᴀ sᴘᴀᴄᴇ.
 
 **<u>BOT COMMANDS:</u>**
 /restart - Restart Bot. 
