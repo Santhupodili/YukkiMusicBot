@@ -46,8 +46,8 @@ A Powerful Telegram Music+Video Bot by which you can stream songs, videos and ev
 > Heroku has two vars[ HEROKU_API_KEY & HEROKU_APP_NAME ] for Updater to work. 
 > By setting those two vars you can get logs of your heroku app, set var, edit var, delete vars , check dyno usage and update bot. 
 > Those two vars are not Mandatory! You can leave them blank too. 
-    
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Santhupodili/YukkiMusicBot.git)
+
+- [![Deploy](https://te.legra.ph/file/5532de782efaf0acfe7c3.jpg)](https://heroku.com/deploy/)
 
 > Not Getting VPS Method? [Watch Tutorial](https://t.me/OfficialYukki/2275)
 </details>
